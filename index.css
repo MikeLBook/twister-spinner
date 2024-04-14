@@ -1,0 +1,130 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 98vw;
+    height: 95vh;
+    background-color: #555;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+
+.spinner {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80vw;
+    height: 80vh;
+}
+
+.quadrant {
+   width: 40vw;
+   height: 40vh;
+   font-size: 3vw;
+   position: relative;
+   background-color: lightgrey;
+
+   .label {
+        position: absolute;
+   }
+}
+
+.quadrant::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/*********************
+* specific quadrants *
+*********************/
+#left-hand {
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+
+    .label {
+        top: .5rem;
+        left: .5rem;
+    }
+}
+
+#left-hand::before {
+    background-image: url( 'hand.svg' );
+    background-size: 15%;
+    transform: scaleX(-1);
+}
+
+#right-hand {
+    border-bottom: 2px solid black;
+
+    .label {
+        top: .5rem;
+        right: .5rem;
+    }
+}
+
+#right-hand::before {
+    background-image: url( 'hand.svg' );
+    background-size: 15%;
+}
+
+#left-foot {
+    border-right: 2px solid black;
+
+    .label {
+        bottom: .5rem;
+        left: .5rem;
+    }
+}
+
+#left-foot::before {
+    background-image: url( 'foot.svg' );
+    background-size: 25%;
+}
+
+#right-foot {
+    .label {
+        bottom: .5rem;
+        right: .5rem;
+    }
+}
+
+#right-foot::before {
+    background-image: url( 'foot.svg' );
+    background-size: 25%;
+    transform: scaleX(-1);
+}
+
+/**********************
+* dynamic class names *
+**********************/
+.active {
+    font-size: 5vw;
+    text-align: center;
+}
+
+.red {
+    background-color: rgba(255, 30, 30, 0.878);
+}
+
+.blue {
+    background-color: steelblue;
+}
+
+.green {
+    background-color: rgb(0, 201, 0);
+}
+
+.yellow {
+    background-color: rgb(225, 225, 0);
+}
+
+.white {
+    background-color: white;
+}
