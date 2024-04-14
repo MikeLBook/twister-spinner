@@ -7,9 +7,11 @@ body {
     height: 95vh;
     background-color: #555;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     user-select: none;
+    font-family: "Indie Flower", cursive;
 }
 
 .spinner {
